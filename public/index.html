@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFP 2020</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://kit.fontawesome.com/cc7d8d5698.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBd6SKzLqqNi3jGb6fAs3m8BFxprS_bcbs",
+            authDomain: "ifp2020-e0c4a.firebaseapp.com",
+            projectId: "ifp2020-e0c4a",
+            storageBucket: "ifp2020-e0c4a.appspot.com",
+            messagingSenderId: "1022885735158",
+            appId: "1:1022885735158:web:b99180f7042577da12dad7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand" href="#">Dissolved O<sub>2</sub> Monitor <i class="fas fa-flask nav-icon"></i></a>
+            <div id="userDetails" hidden="true" class="ml-auto"></div>
+            <button id="signInBtn" class="btn btn-outline-light">Sign In</button>
+            <button id="signOutBtn" class="btn btn-outline-light">Sign Out</button>
+        </nav>
+    </header>
+
+
+    <section id="signedOut">
+        <h1>Sign in using your Google Account to view the dashboard</h1>
+    </section>
+
+    <section id="signedIn" hidden="true">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="table-col col-12 col-lg-8">
+                    <table id="readings">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="col-12 col-lg-4 information">
+                    <h2>Parameters</h2>
+                    <p>The following values are measured using sensors and sent to the ML model for prediction:</p>
+                    <ul>
+                        <li><b>Q-E :</b> input flow to the plant</li>
+                        <li><b>PH-E :</b> input pH to plant</li>
+                        <li><b>ZN-E :</b> input Zinc to plant (mg/L)</li>
+                        <li><b>DQO-E :</b> input chemical demand of oxygen to plant (mg/L)</li>
+                        <!-- <li>DQO-S : output chemical demand of oxygen</li> -->
+                    </ul>
+                    <hr>
+                    <h2>Predicted Value</h2>
+                    <p>Based on the values input from sensors time <span id="time"></span> - </p>
+                    <p><span id="prediction"></span> mg/L is the predicted value of DQO-S</p>
+                    <p>Here, DQO-S is the output chemical demand of oxygen of the secondary treatment process. This will help in identifying if further cycles of treatment are required.</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>Created by Vanathi G and Sruthi Bijoy, 2021</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

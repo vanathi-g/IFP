@@ -1,0 +1,110 @@
+body {
+    background-color: #f0efef;
+}
+
+.navbar {
+    background-color: #0f4c75;
+    font-family: Verdana, Helvetica, sans-serif;
+}
+
+.nav-icon {
+    color: ivory;
+}
+
+.navbar-brand {
+    color: white;
+    font-weight: 900;
+    font-size: x-large;
+}
+
+#signedIn{
+    background-color: #3282b8;
+    padding: 0 1%;
+}
+
+#signedOut h1{
+    font-size: 1.25rem;
+    font-weight: bold;
+
+}
+
+#signedOut{
+    padding: 2%;
+    min-height: 90vh;
+    text-align: center;
+}
+
+.navbar-brand:hover {
+    color: ivory;
+}
+
+#signInBtn, #signOutBtn {
+    border-width: 3px;
+    font-weight: 900;
+}
+
+#userDetails {
+    margin: 0;
+    padding: 0;
+}
+
+.username {
+    font-size: 1.25rem;
+    color: ivory;
+    font-weight: 600;
+    padding-right: 20px;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+th, td {
+    text-align: left;
+    padding: 1% 3%;
+    min-width: 60px;
+}
+
+th {
+    font-size: 1.25 rem;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {background-color: #bbe1fa;}
+tr:nth-child(odd) {background-color: ivory;}
+
+.information {
+    background-color: ivory;
+    padding: 2%;
+    height: 50%;
+}
+
+footer {
+    background-color: #0f4c75;
+    text-align: center;
+    color: ivory;
+    height: 40px;
+    padding: 15px;
+    font-size: 11px;
+}
+
+@media (max-width: 991.98px){
+    .information {
+        background-color: ivory;
+        padding: 5%;
+        margin-top: 5%;
+    }
+
+    .table-col {
+        margin-top: 2%;
+        overflow: scroll;
+    }
+
+    th {
+        font-size: 1rem;
+    }
+}
+
